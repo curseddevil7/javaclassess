@@ -1,4 +1,6 @@
 package com.company;
+import com.sun.source.tree.WhileLoopTree;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 class Student{
@@ -18,6 +20,7 @@ class Student{
         System.out.print("Gender(m/f/o):");
         gender= scan.next().charAt(0);
         System.out.println("Marks:");
+        System.out.println("Maths:");
         marks[0]=scan.nextInt();
         System.out.println("Physics:");
         marks[1]=scan.nextInt();
@@ -49,40 +52,42 @@ public class task2{
         for (int i=0;i<n;i++) {
 
 
-            if (student[i].ID == id)
+            if (student[i].ID == id) {
                 student[i].displayDetails();
-        }
-        static void sortDetails(){
-            Student t=new Student();
-            for (int i=0;i<n-1;i++){
-                for(int j=0;j<n-1;j++){
-                    if(student[j].total<student[j+1].total){
-                        t=student[j];
-                        student[j]=student[j+1];
-                        student[j+1]=t;
-                    }
+            }
+        }}
+    static void sortDetails(){
+        Student t=new Student();
+        for (int i=0;i<n-1;i++){
+            for(int j=0;j<n-1;j++){
+                if(student[j].total<student[j+1].total){
+                    t=student[j];
+                    student[j]=student[j+1];
+                    student[j+1]=t;
                 }
             }
-
         }
 
     }
+
+
     static void displayAll(){
         System.out.println("sl\tName\tTotal %");
         for(int i=0;i<n;i++){
             System.out.println((i+1)+".\t"+(student[i].Name)+"\t"+student[i].total);
 
-        }
-        static void displayAll(int n){
-            System.out.println("sl\tName\tTotal %");
-            for(int i=0;i<n;i++){
-                System.out.println((i+1)+".\t"+(student[i].Name)+"\t"+student[i].total);
+        }}
+    static void displayAll(int k){
+        System.out.println("sl\tName\tTotal %");
+        for(int i=0;i<k;i++){
+            System.out.println((i+1)+".\t"+(student[i].Name)+"\t"+student[i].total);
 
-            }
         }
-        public static void main(String[] args){
-            int choice;
-            System.out.println("\nMENU\n1.Enter student details\n2.Find student\n3.topm students\n4.exit ");
+    }
+    public static void main(String[] args) {
+        int choice;
+        while (true) {
+            System.out.println("\nMENU\n1.Enter student details\n2.Find student\n3.topm students\n4.show all students\n5.exit ");
             System.out.println("enter your choice:");
             choice = scan.nextInt();
             switch (choice) {
@@ -106,17 +111,21 @@ public class task2{
                     System.out.println("\n\nEnter number of student : ");
                     int topp = scan.nextInt();
                     displayAll(topp);
+                    break;
                 case 4:
                     displayAll();
                     break;
+                case 5:
+                    System.exit(0);
+                    break;
                 default:
-                    System.out.println("ERROR:invalid choice");
+                    System.out.println("ERROR:invalid choice,please enter a valid input");
 
 
             }
         }
-
-        }
+    }
+}
 
 
 
