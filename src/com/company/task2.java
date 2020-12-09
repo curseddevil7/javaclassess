@@ -3,6 +3,9 @@ import com.sun.source.tree.WhileLoopTree;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
 class Student{
     Scanner scan=new Scanner(System.in);
     String Name;
@@ -101,30 +104,39 @@ public class task2{
                         student[i].displayDetails();
                     }
                     sortDetails();
+                    System.out.println("press '7' to continue");
+                   int l = scan.nextInt();
+                    if ( l==7){
                     break;
-                case 2:
-                    System.out.println("\n\nEnter student ID: ");
-                    int IDD = scan.nextInt();
-                    findStudent(IDD);
-                    break;
-                case 3:
-                    System.out.println("\n\nEnter number of student : ");
-                    int topp = scan.nextInt();
-                    displayAll(topp);
-                    break;
-                case 4:
-                    displayAll();
-                    break;
-                case 5:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("ERROR:invalid choice,please enter a valid input");
+                }
+                    else{
+                    System.out.println("wrong input");
+                    System.out.println("press '7' to continue");
+                }
+
+            case 2:
+                System.out.println("\n\nEnter student ID: ");
+                int IDD = scan.nextInt();
+                findStudent(IDD);
+                break;
+            case 3:
+                System.out.println("\n\nEnter number of student : ");
+                int topp = scan.nextInt();
+                displayAll(topp);
+                break;
+            case 4:
+                displayAll();
+                break;
+            case 5:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("ERROR:invalid choice,please enter a valid input");
 
 
-            }
         }
     }
+}
 }
 
 
