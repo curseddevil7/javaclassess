@@ -1,16 +1,12 @@
 package com.company;
-import com.sun.source.tree.WhileLoopTree;
-import java.sql.SQLOutput;
 import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
 
 class Student{
     Scanner scan=new Scanner(System.in);
     String Name;
     int ID;
     char gender;
-    int[] marks=new int[4];
+    float[] marks=new float[4];
     double total;
 
     void inputDetails(){
@@ -64,10 +60,10 @@ class foreignStudent extends Student {
 
     }
     void displayDetail(){
-            System.out.println("Nationality: "+Nationality);
-            System.out.println("Visa Number: "+visaNumber);
-            System.out.println("Native Language: "+nativeLanguage);
-            System.out.println("Country Code:"+countryCode);
+        System.out.println("Nationality: "+Nationality);
+        System.out.println("Visa Number: "+visaNumber);
+        System.out.println("Native Language: "+nativeLanguage);
+        System.out.println("Country Code:"+countryCode);
     }
 }
 
